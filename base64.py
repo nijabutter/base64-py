@@ -4,14 +4,13 @@ if len(sys.argv) < 3:
     print("Invalid arguments: base64.py [-d] <input_file> <output_file>")
     exit(0)
 
-if "-d" in sys.argv:
-    doDecode = True
-    sys.argv.remove("-d")
-else:
-    doDecode = False
+doDecode = False
+if len(sys.argv) > 3:
+    if sys.argv[1] == "-d":
+        doDecode = True
 
-input_file = sys.argv[1]
-output_file = sys.argv[2]
+input_file = sys.argv[-2]
+output_file = sys.argv[-1]
 
 table = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
 padding = "="
