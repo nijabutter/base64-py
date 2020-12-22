@@ -1,6 +1,6 @@
 import sys
 
-if len(sys.argv) < 3:
+if len(sys.argv) < 3 or len(sys.argv) > 4:
     print("Invalid arguments: base64.py [-d] <input_file> <output_file>")
     exit(0)
 
